@@ -9,9 +9,29 @@ import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Help from './pages/Help';
 
+import GridScan from './components/GridScan';
+
 function App() {
   return (
     <Router>
+
+
+
+      {/* <div style={{ width: '100%', height: '600px', position: 'relative' }} className="min-h-screen bg-black text-white">
+        <GridScan
+          sensitivity={0.55}
+          lineThickness={1}
+          linesColor="#392e4e"
+          gridScale={0.1}
+          scanColor="#FF9FFC"
+          scanOpacity={0.4}
+          enablePost
+          bloomIntensity={0.6}
+          chromaticAberration={0.002}
+          noiseIntensity={0.01}
+        /> */}
+
+      {/* </div> */}
       <div className="min-h-screen bg-black text-white">
         <Header />
         <Routes>
@@ -23,7 +43,7 @@ function App() {
           <Route path="/help" element={<Help />} />
         </Routes>
       </div>
-        <Footer />
+      <Footer />
     </Router>
   );
 }
