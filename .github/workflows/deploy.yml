@@ -1,0 +1,21 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v4
+        
+        - run: docker build . -t suyashmishra013/cicd
+        - run: echo "${{ secrets.DOCKERHUB_PASS}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin   
+        #   input text | input ask by - --password-stdin
+        # github ke secrete me jake dockerhub ke username or password store krna hai
+        - run: docker push suyashmishra013/cicd:latest
+
+
